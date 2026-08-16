@@ -26,5 +26,11 @@ func DirExists(dirPath string) (bool, error) {
 
 func DotGitExists(dirPath string) (bool, error) {
 	dotGitPath := filepath.Join(dirPath, ".git")
-	return DirExists(dotGitPath)
+
+	exists, err := DirExists(dotGitPath)
+	if err != nil || !exists {
+		return false, fmt.Errorf("fatal: not a git repository: %w", err)
+	}
+
+	return exists, nil
 }

@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+
+	"github.com/devxdh/gitingo/pkg/utils"
 )
 
 func HashObject(targetDir string, filePath string, write bool) (string, error) {
@@ -26,6 +28,10 @@ func HashObject(targetDir string, filePath string, write bool) (string, error) {
 
 	if !write {
 		return hash, nil
+	}
+
+	if exists, err := utils.DotGitExists(filePath); err != nil || !exists {
+		return "", err
 	}
 
 	if err := writeObject(targetDir, hash, payload); err != nil {
