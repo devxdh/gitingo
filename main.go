@@ -1,7 +1,11 @@
+/*
+Copyright © 2026 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import "fmt"
+import "github.com/devxdh/gitingo/cmd"
 
 func main() {
-	fmt.Println("Welcome to GitInGo!")
+	cmd.Execute()
 }
