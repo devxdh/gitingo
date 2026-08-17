@@ -10,7 +10,7 @@ import (
 var writeFlag bool
 
 var hashObjectCmd = &cobra.Command{
-	Use:   "hashObject [flags] <file>",
+	Use:   "hash-object [flags] <file>",
 	Short: "Compute object ID and optinally creates a blob from a file",
 	Args:  cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
