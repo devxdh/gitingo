@@ -30,7 +30,7 @@ func HashObject(targetDir string, filePath string, write bool) (string, error) {
 		return hash, nil
 	}
 
-	if exists, err := utils.DotGitExists(filePath); err != nil || !exists {
+	if exists, err := utils.DotGitExists(targetDir); err != nil || !exists {
 		return "", err
 	}
 
