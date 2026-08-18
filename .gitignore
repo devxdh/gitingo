@@ -1,1 +1,20 @@
+# Build & Distribution Artifacts
+bin/
+dist/
+gitingo
+gitingo.exe
+gitingo-darwin-*
+gitingo-linux-*
+gitingo-windows-*
+
+# Test Coverage & Temp
+*.out
+*.test
+*.prof
+
+# Dependencies & IDEs
+node_modules/
+.idea/
+.vscode/
+*.swp
 gitingo.code-workspace
