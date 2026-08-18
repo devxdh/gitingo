@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gitingo/pkg/utils"
 )
 
 func HashObject(targetDir string, filePath string, write bool) (string, error) {
@@ -30,7 +30,7 @@ func HashObject(targetDir string, filePath string, write bool) (string, error) {
 		return hash, nil
 	}
 
-	if exists, err := utils.DotGitExists(targetDir); err != nil || !exists {
+	if exists, err := u.DotGitExists(targetDir); err != nil || !exists {
 		return "", err
 	}
 
