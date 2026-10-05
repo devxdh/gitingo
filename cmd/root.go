@@ -8,16 +8,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Version is populated at build time using -ldflags "-X github.com/devxdh/gitingo/cmd.Version=v1.0.0"
+// Version is populated at build time using -ldflags "-X github.com/devxdh/gig/cmd.Version=v1.0.0"
 var Version = "v1.0.0"
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "gitingo",
-	Short: "gitingo - A fast, lightweight Git VCS implementation written in Go",
-	Long: `Gitingo is a standalone Version Control System (VCS) CLI written in Go.
+	Use:   "gig",
+	Short: "gig - A fast, lightweight Git VCS implementation written in Go",
+	Long: `gig (Git-In-Go) is a standalone Version Control System (VCS) CLI written in Go.
 It implements core Git internal objects (blobs, trees, commits), repository initialization,
-object hashing, tree creation, commit logging, and inspection commands.`,
+object hashing, tree creation, commit logging, branch management, and checkout commands.`,
 	Version: Version,
 }
 
@@ -32,5 +32,5 @@ func Execute() {
 
 func init() {
 	// Custom version template
-	rootCmd.SetVersionTemplate("gitingo version {{.Version}}\n")
+	rootCmd.SetVersionTemplate("gig version {{.Version}}\n")
 }

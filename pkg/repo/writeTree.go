@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"sort"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func WriteTree(targetDir string) (string, error) {

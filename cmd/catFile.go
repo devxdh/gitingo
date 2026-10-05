@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/devxdh/gitingo/pkg/repo"
+	"github.com/devxdh/gig/pkg/repo"
 	"github.com/spf13/cobra"
 )
 

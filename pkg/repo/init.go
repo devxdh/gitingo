@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func Init(targetDir string) error {
@@ -35,6 +35,6 @@ func Init(targetDir string) error {
 		return fmt.Errorf("failed to write HEAD into %s: %v", headPath, err)
 	}
 
-	fmt.Printf("Initialized Gitingo repository in %s\n", filepath.Join(cleanedTarget, ".git"))
+	fmt.Printf("Initialized Gig repository in %s\n", filepath.Join(cleanedTarget, ".git"))
 	return nil
 }

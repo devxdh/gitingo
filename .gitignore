@@ -1,11 +1,11 @@
 # Build & Distribution Artifacts
 bin/
 dist/
-gitingo
-gitingo.exe
-gitingo-darwin-*
-gitingo-linux-*
-gitingo-windows-*
+gig
+gig.exe
+gig-darwin-*
+gig-linux-*
+gig-windows-*
 
 # Test Coverage & Temp
 *.out
@@ -17,4 +17,4 @@ node_modules/
 .idea/
 .vscode/
 *.swp
-gitingo.code-workspace
+*.code-workspace

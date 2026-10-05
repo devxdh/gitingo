@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 type CommitData struct {

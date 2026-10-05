@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func ReadObject(targetDir string, hash string) (string, []byte, error) {

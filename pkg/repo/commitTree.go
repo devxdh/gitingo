@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func CommitTree(targetDir string, treeHash string, parentHash string, message string) (string, error) {

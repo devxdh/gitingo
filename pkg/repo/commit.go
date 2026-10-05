@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func Commit(targetDir string, message string) (string, error) {

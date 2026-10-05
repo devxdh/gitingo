@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-# Gitingo global installer script
-# Usage: curl -fsSL https://raw.githubusercontent.com/devxdh/gitingo/main/install.sh | bash
+# Gig global installer script
+# Usage: curl -fsSL https://raw.githubusercontent.com/devxdh/gig/main/install.sh | bash
 
-REPO="devxdh/gitingo"
+REPO="devxdh/gig"
 TAG="v1.0.0"
-APP_NAME="gitingo"
+APP_NAME="gig"
 
 OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
 ARCH="$(uname -m)"
@@ -65,16 +65,16 @@ if command -v go >/dev/null 2>&1; then
     echo "Found Go installed. Compiling latest ${APP_NAME} binary locally..."
     go install github.com/${REPO}@latest
     echo "Successfully installed ${APP_NAME} via go install!"
-    echo "Location: $(command -v gitingo || echo '$GOPATH/bin/gitingo')"
+    echo "Location: $(command -v gig || echo '$GOPATH/bin/gig')"
     exit 0
 fi
 
 echo "Downloading binary from ${DOWNLOAD_URL}..."
-if curl -fsSL "$DOWNLOAD_URL" -o "$TMP_DIR/gitingo"; then
-    chmod +x "$TMP_DIR/gitingo"
-    mv "$TMP_DIR/gitingo" "$INSTALL_DIR/gitingo"
-    echo "Successfully installed ${APP_NAME} to ${INSTALL_DIR}/gitingo"
-    echo "Run 'gitingo --help' to get started!"
+if curl -fsSL "$DOWNLOAD_URL" -o "$TMP_DIR/gig"; then
+    chmod +x "$TMP_DIR/gig"
+    mv "$TMP_DIR/gig" "$INSTALL_DIR/gig"
+    echo "Successfully installed ${APP_NAME} to ${INSTALL_DIR}/gig"
+    echo "Run 'gig --help' to get started!"
 else
     echo "Error: Download failed. Please ensure Go is installed and run:"
     echo "  go install github.com/${REPO}@latest"

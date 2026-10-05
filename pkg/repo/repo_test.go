@@ -29,7 +29,7 @@ func TestRepoWorkflow(t *testing.T) {
 
 	// 2. HashObject & Write Blob
 	sampleFile := filepath.Join(tempDir, "test.txt")
-	if err := os.WriteFile(sampleFile, []byte("hello gitingo\n"), 0o644); err != nil {
+	if err := os.WriteFile(sampleFile, []byte("hello gig\n"), 0o644); err != nil {
 		t.Fatalf("WriteFile failed: %v", err)
 	}
 
@@ -49,8 +49,8 @@ func TestRepoWorkflow(t *testing.T) {
 	if objType != "blob" {
 		t.Fatalf("Expected objType 'blob', got '%s'", objType)
 	}
-	if string(content) != "hello gitingo\n" {
-		t.Fatalf("Expected blob content 'hello gitingo\\n', got '%s'", string(content))
+	if string(content) != "hello gig\n" {
+		t.Fatalf("Expected blob content 'hello gig\\n', got '%s'", string(content))
 	}
 
 	// 3. WriteTree

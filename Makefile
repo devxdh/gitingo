@@ -1,8 +1,8 @@
-APP_NAME := gitingo
+APP_NAME := gig
 VERSION ?= v1.0.0
 BUILD_DIR := bin
 DIST_DIR := dist
-PACKAGE := github.com/devxdh/gitingo
+PACKAGE := github.com/devxdh/gig
 LDFLAGS := -s -w -X $(PACKAGE)/cmd.Version=$(VERSION)
 
 .PHONY: all dev build install test clean cross-build help

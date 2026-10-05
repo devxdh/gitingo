@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func Checkout(targetDir string, target string, createBranch bool) error {

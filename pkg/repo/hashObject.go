@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	u "github.com/devxdh/gitingo/pkg/utils"
+	u "github.com/devxdh/gig/pkg/utils"
 )
 
 func HashObject(targetDir string, filePath string, write bool) (string, error) {

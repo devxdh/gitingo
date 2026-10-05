@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-APP_NAME="gitingo"
+APP_NAME="gig"
 VERSION="${VERSION:-v1.0.0}"
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DIST_DIR="${PROJECT_ROOT}/dist"
-PACKAGE="github.com/devxdh/gitingo"
+PACKAGE="github.com/devxdh/gig"
 LDFLAGS="-s -w -X ${PACKAGE}/cmd.Version=${VERSION}"
 
 rm -rf "$DIST_DIR"
@@ -37,11 +37,11 @@ for PLATFORM in "${PLATFORMS[@]}"; do
     # Create compressed archive packages for distribution
     TMP_ARCHIVE_DIR=$(mktemp -d)
     if [ "$GOOS" = "windows" ]; then
-        cp "$DIST_DIR/$BINARY_NAME" "$TMP_ARCHIVE_DIR/gitingo.exe"
-        (cd "$TMP_ARCHIVE_DIR" && zip -q -r "$DIST_DIR/gitingo_${VERSION}_${GOOS}_${GOARCH}.zip" gitingo.exe)
+        cp "$DIST_DIR/$BINARY_NAME" "$TMP_ARCHIVE_DIR/gig.exe"
+        (cd "$TMP_ARCHIVE_DIR" && zip -q -r "$DIST_DIR/gig_${VERSION}_${GOOS}_${GOARCH}.zip" gig.exe)
     else
-        cp "$DIST_DIR/$BINARY_NAME" "$TMP_ARCHIVE_DIR/gitingo"
-        (cd "$TMP_ARCHIVE_DIR" && tar -czf "$DIST_DIR/gitingo_${VERSION}_${GOOS}_${GOARCH}.tar.gz" gitingo)
+        cp "$DIST_DIR/$BINARY_NAME" "$TMP_ARCHIVE_DIR/gig"
+        (cd "$TMP_ARCHIVE_DIR" && tar -czf "$DIST_DIR/gig_${VERSION}_${GOOS}_${GOARCH}.tar.gz" gig)
     fi
     rm -rf "$TMP_ARCHIVE_DIR"
 done
@@ -51,4 +51,3 @@ echo "Generating SHA256 checksums..."
 
 echo "Build complete! Release artifacts located in $DIST_DIR:"
 ls -lh "$DIST_DIR"
-
