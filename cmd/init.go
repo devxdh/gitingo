@@ -1,21 +1,27 @@
 package cmd
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/devxdh/gig/pkg/repo"
 	"github.com/spf13/cobra"
 )
 
 // initCmd represents the init command
 var initCmd = &cobra.Command{
-	Use:   "init [target-file-path, defaults to current directory]",
-	Short: "Initializes the a folder as repository and make .git folder",
+	Use:   "init [directory]",
+	Short: "Initialize an empty Git repository",
 	Args:  cobra.MaximumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		targetDir := "."
 		if len(args) > 0 {
 			targetDir = args[0]
 		}
-		repo.Init(targetDir)
+		if err := repo.Init(targetDir); err != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+			os.Exit(1)
+		}
 	},
 }
 

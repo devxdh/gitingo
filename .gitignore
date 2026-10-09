@@ -11,10 +11,9 @@ gig-windows-*
 *.out
 *.test
 *.prof
+sandbox
 
 # Dependencies & IDEs
-node_modules/
-.idea/
 .vscode/
 *.swp
 *.code-workspace
